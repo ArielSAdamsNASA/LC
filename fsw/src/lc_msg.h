@@ -38,7 +38,9 @@
 /************************************************************************
  * Type Definitions
  ************************************************************************/
-
+#ifdef CFE_EDS_ENABLED_BUILD
+#include "lc_eds_typedefs.h"
+#else
 /**
  * \defgroup cfslccmdstructs CFS Limit Checker Command Structures
  * \{
@@ -195,5 +197,7 @@ typedef struct
 } LC_HkPacket_t;
 
 /**\}*/
+
+#endif
 
 #endif

@@ -32,6 +32,9 @@
 /************************************************************************
  * Macro Definitions
  ************************************************************************/
+#ifdef CFE_EDS_ENABLED_BUILD
+#include "lc_eds_typedefs.h"
+#else
 
 /**
  * \name LC CDS Saved on Exit Identifiers
@@ -45,7 +48,7 @@
  * \name Watchpoint Definition Table (WDT) DataType Enumerated Types
  * \{
  */
-#define LC_WATCH_NOT_USED 0xFF /**< \brief Use for empty entries */
+#define LC_DATA_WATCH_NOT_USED 0xFF /**< \brief Use for empty entries */
 #define LC_DATA_BYTE      1    /**< \brief 8 bit signed byte */
 #define LC_DATA_UBYTE     2    /**< \brief 8 bit unsigned byte */
 #define LC_DATA_WORD_BE   3    /**< \brief 16 bit signed word big endian byte order */
@@ -141,5 +144,7 @@
 #define LC_ADTVAL_ERR_EVTTYPE  4 /**< \brief Invalid EventType                 */
 #define LC_ADTVAL_ERR_RPN      5 /**< \brief Invalid Reverse Polish Expression */
 /**\}*/
+
+#endif
 
 #endif

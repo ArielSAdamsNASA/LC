@@ -297,12 +297,12 @@
  
   The entire WDT is searched anytime a message is received that may contain watchpoints.
   For this reason, it is important that unused entries are properly marked by setting
-  the WDT parameter DataType to #LC_WATCH_NOT_USED.
+  the WDT parameter DataType to #LC_DATA_WATCH_NOT_USED.
     
   The entire ADT is processed anytime a sample request is received that specifies an
   actionpoint equal to #LC_ALL_ACTIONPOINTS. For this reason, it is important that unused 
   entries are properly marked by setting the ADT parameter DefaultState to 
-  #LC_ACTION_NOT_USED.
+  #LC_APSTATE_ACTION_NOT_USED.
      
   When either the WDT or ADT are updated, the corresponding results table (WRT or ART) is
   reset to initialization values. For each entry in the WRT, WatchResult is set to 
@@ -428,7 +428,7 @@
   </B> <BR> <BR> <I>
      #LC_WATCH_STALE is an initialization value for the Watchpoint
      Results Table. If a watchpoint has this WatchResult then the watchpoint
-     is unused (the DataType in the WDT is set to #LC_WATCH_NOT_USED) or a
+     is unused (the DataType in the WDT is set to #LC_DATA_WATCH_NOT_USED) or a
      message that contains the watchpoint has not yet been received by LC and 
      evaluated.
   </I>
@@ -523,7 +523,7 @@
      three possible conditions are true: 
        
      1) The actionpoint is unused (the DefaultState in the ADT is set to 
-        #LC_ACTION_NOT_USED).
+        #LC_APSTATE_ACTION_NOT_USED).
         
      2) An actionpoint sample request (#LC_SAMPLE_AP_MID) targeting the AP has not 
         yet been received by LC so the AP has not yet been evaluated.

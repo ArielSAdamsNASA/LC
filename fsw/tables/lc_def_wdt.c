@@ -90,17 +90,16 @@
 /*
 ** Table file header
 */
-static CFE_TBL_FileDef_t CFE_TBL_FileDef
-    __attribute__((__used__)) = {"LC_DefaultWDT", LC_APP_NAME "." LC_WDT_TABLENAME, "LC watchpoint definition table",
+CFE_TBL_FileDef_t CFE_TBL_FileDef = {"LC_WDT", LC_APP_NAME "." LC_WDT_TABLENAME, "LC watchpoint definition table",
                                  "lc_def_wdt.tbl", (sizeof(LC_WDTEntry_t) * LC_MAX_WATCHPOINTS)};
 
 /*
 ** Default watchpoint definition table (WDT) data
 */
-LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
+LC_WDTEntry_t LC_WDT[LC_MAX_WATCHPOINTS] = {
     /* #0 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -112,7 +111,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #1 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -124,7 +123,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #2 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -136,7 +135,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #3 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -148,7 +147,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #4 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -160,7 +159,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #5 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -172,7 +171,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #6 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -184,7 +183,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #7 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -196,7 +195,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #8 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -208,7 +207,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #9 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -220,7 +219,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #10 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -232,7 +231,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #11 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -244,7 +243,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #12 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -256,7 +255,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #13 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -268,7 +267,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #14 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -280,7 +279,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #15 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -292,7 +291,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #16 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -304,7 +303,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #17 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -316,7 +315,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #18 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -328,7 +327,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #19 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -340,7 +339,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #20 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -352,7 +351,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #21 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -364,7 +363,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #22 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -376,7 +375,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #23 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -388,7 +387,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #24 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -400,7 +399,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #25 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -412,7 +411,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #26 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -424,7 +423,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #27 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -436,7 +435,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #28 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -448,7 +447,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #29 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -460,7 +459,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #30 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -472,7 +471,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #31 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -484,7 +483,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #32 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -496,7 +495,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #33 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -508,7 +507,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #34 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -520,7 +519,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #35 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -532,7 +531,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #36 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -544,7 +543,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #37 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -556,7 +555,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #38 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -568,7 +567,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #39 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -580,7 +579,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #40 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -592,7 +591,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #41 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -604,7 +603,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #42 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -616,7 +615,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #43 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -628,7 +627,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #44 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -640,7 +639,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #45 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -652,7 +651,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #46 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -664,7 +663,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #47 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -676,7 +675,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #48 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -688,7 +687,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #49 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -700,7 +699,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #50 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -712,7 +711,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #51 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -724,7 +723,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #52 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -736,7 +735,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #53 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -748,7 +747,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #54 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -760,7 +759,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #55 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -772,7 +771,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #56 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -784,7 +783,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #57 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -796,7 +795,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #58 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -808,7 +807,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #59 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -820,7 +819,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #60 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -832,7 +831,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #61 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -844,7 +843,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #62 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -856,7 +855,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #63 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -868,7 +867,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #64 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -880,7 +879,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #65 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -892,7 +891,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #66 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -904,7 +903,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #67 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -916,7 +915,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #68 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -928,7 +927,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #69 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -940,7 +939,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #70 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -952,7 +951,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #71 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -964,7 +963,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #72 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -976,7 +975,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #73 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -988,7 +987,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #74 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1000,7 +999,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #75 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1012,7 +1011,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #76 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1024,7 +1023,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #77 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1036,7 +1035,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #78 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1048,7 +1047,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #79 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1060,7 +1059,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #80 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1072,7 +1071,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #81 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1084,7 +1083,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #82 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1096,7 +1095,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #83 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1108,7 +1107,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #84 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1120,7 +1119,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #85 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1132,7 +1131,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #86 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1144,7 +1143,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #87 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1156,7 +1155,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #88 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1168,7 +1167,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #89 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1180,7 +1179,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #90 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1192,7 +1191,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #91 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1204,7 +1203,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #92 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1216,7 +1215,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #93 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1228,7 +1227,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #94 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1240,7 +1239,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #95 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1252,7 +1251,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #96 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1264,7 +1263,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #97 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1276,7 +1275,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #98 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1288,7 +1287,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #99 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1300,7 +1299,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #100 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1312,7 +1311,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #101 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1324,7 +1323,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #102 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1336,7 +1335,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #103 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1348,7 +1347,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #104 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1360,7 +1359,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #105 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1372,7 +1371,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #106 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1384,7 +1383,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #107 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1396,7 +1395,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #108 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1408,7 +1407,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #109 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1420,7 +1419,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #110 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1432,7 +1431,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #111 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1444,7 +1443,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #112 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1456,7 +1455,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #113 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1468,7 +1467,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #114 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1480,7 +1479,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #115 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1492,7 +1491,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #116 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1504,7 +1503,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #117 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1516,7 +1515,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #118 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1528,7 +1527,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #119 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1540,7 +1539,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #120 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1552,7 +1551,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #121 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1564,7 +1563,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #122 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1576,7 +1575,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #123 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1588,7 +1587,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #124 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1600,7 +1599,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #125 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1612,7 +1611,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #126 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1624,7 +1623,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #127 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1636,7 +1635,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #128 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1648,7 +1647,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #129 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1660,7 +1659,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #130 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1672,7 +1671,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #131 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1684,7 +1683,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #132 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1696,7 +1695,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #133 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1708,7 +1707,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #134 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1720,7 +1719,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #135 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1732,7 +1731,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #136 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1744,7 +1743,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #137 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1756,7 +1755,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #138 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1768,7 +1767,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #139 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1780,7 +1779,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #140 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1792,7 +1791,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #141 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1804,7 +1803,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #142 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1816,7 +1815,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #143 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1828,7 +1827,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #144 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1840,7 +1839,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #145 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1852,7 +1851,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #146 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1864,7 +1863,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #147 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1876,7 +1875,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #148 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1888,7 +1887,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #149 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1900,7 +1899,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #150 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1912,7 +1911,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #151 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1924,7 +1923,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #152 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1936,7 +1935,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #153 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1948,7 +1947,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #154 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1960,7 +1959,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #155 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1972,7 +1971,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #156 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1984,7 +1983,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #157 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -1996,7 +1995,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #158 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2008,7 +2007,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #159 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2020,7 +2019,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #160 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2032,7 +2031,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #161 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2044,7 +2043,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #162 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2056,7 +2055,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #163 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2068,7 +2067,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #164 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2080,7 +2079,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #165 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2092,7 +2091,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #166 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2104,7 +2103,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #167 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2116,7 +2115,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #168 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2128,7 +2127,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #169 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2140,7 +2139,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #170 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2152,7 +2151,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #171 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2164,7 +2163,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #172 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2176,7 +2175,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #173 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2188,7 +2187,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #174 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,
@@ -2200,7 +2199,7 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] = {
 
     /* #175 (unused) */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
+        .DataType                   = LC_DATA_WATCH_NOT_USED,
         .OperatorID                 = LC_NO_OPER,
         .MessageID                  = CFE_SB_MSGID_RESERVED,
         .WatchpointOffset           = 0,

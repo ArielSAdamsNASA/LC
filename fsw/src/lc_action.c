@@ -51,7 +51,7 @@ void LC_SampleAPs(uint16 StartIndex, uint16 EndIndex)
     {
         CurrentAPState = LC_OperData.ARTPtr[StartIndex].CurrentState;
 
-        if ((CurrentAPState != LC_ACTION_NOT_USED) && (CurrentAPState != LC_APSTATE_PERMOFF))
+        if ((CurrentAPState != LC_APSTATE_ACTION_NOT_USED) && (CurrentAPState != LC_APSTATE_PERMOFF))
         {
             /*
             ** Sample the specified actionpoint
@@ -511,7 +511,7 @@ int32 LC_ValidateADT(void *TableData)
         RPNPtr            = TableArray[TableIndex].RPNEquation;
         EventType         = TableArray[TableIndex].EventType;
 
-        if (DefaultState == LC_ACTION_NOT_USED)
+        if (DefaultState == LC_APSTATE_ACTION_NOT_USED)
         {
             /*
             ** Unused table entry

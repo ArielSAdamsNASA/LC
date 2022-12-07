@@ -105,7 +105,7 @@ void LC_CreateHashTable(void)
     for (WatchPtTblIndex = 0; WatchPtTblIndex < LC_MAX_WATCHPOINTS; WatchPtTblIndex++)
     {
         /* Skip unused watchpoint table entries */
-        if (LC_OperData.WDTPtr[WatchPtTblIndex].DataType != LC_WATCH_NOT_USED)
+        if (LC_OperData.WDTPtr[WatchPtTblIndex].DataType != LC_DATA_WATCH_NOT_USED)
         {
             MessageID = LC_OperData.WDTPtr[WatchPtTblIndex].MessageID;
 
@@ -960,7 +960,7 @@ int32 LC_ValidateWDT(void *TableData)
         MessageID    = TableArray[TableIndex].MessageID;
         CompareValue = TableArray[TableIndex].ComparisonValue.Unsigned32;
 
-        if (DataType == LC_WATCH_NOT_USED)
+        if (DataType == LC_DATA_WATCH_NOT_USED)
         {
             /*
             ** Unused table entry

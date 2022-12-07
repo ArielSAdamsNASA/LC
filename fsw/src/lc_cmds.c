@@ -222,20 +222,20 @@ int32 LC_HousekeepingReq(const CFE_MSG_CommandHeader_t *MsgPtr)
         /*
         ** Update HK variables
         */
-        LC_OperData.HkPacket.CmdCount            = LC_AppData.CmdCount;
-        LC_OperData.HkPacket.CmdErrCount         = LC_AppData.CmdErrCount;
-        LC_OperData.HkPacket.APSampleCount       = LC_AppData.APSampleCount;
-        LC_OperData.HkPacket.MonitoredMsgCount   = LC_AppData.MonitoredMsgCount;
-        LC_OperData.HkPacket.RTSExecCount        = LC_AppData.RTSExecCount;
-        LC_OperData.HkPacket.PassiveRTSExecCount = LC_AppData.PassiveRTSExecCount;
-        LC_OperData.HkPacket.CurrentLCState      = LC_AppData.CurrentLCState;
-        LC_OperData.HkPacket.WPsInUse            = LC_OperData.WatchpointCount;
+        LC_OperData.HkPacket.Payload.CmdCount            = LC_AppData.CmdCount;
+        LC_OperData.HkPacket.Payload.CmdErrCount         = LC_AppData.CmdErrCount;
+        LC_OperData.HkPacket.Payload.APSampleCount       = LC_AppData.APSampleCount;
+        LC_OperData.HkPacket.Payload.MonitoredMsgCount   = LC_AppData.MonitoredMsgCount;
+        LC_OperData.HkPacket.Payload.RTSExecCount        = LC_AppData.RTSExecCount;
+        LC_OperData.HkPacket.Payload.PassiveRTSExecCount = LC_AppData.PassiveRTSExecCount;
+        LC_OperData.HkPacket.Payload.CurrentLCState      = LC_AppData.CurrentLCState;
+        LC_OperData.HkPacket.Payload.WPsInUse            = LC_OperData.WatchpointCount;
 
         /*
         ** Clear out the active actionpoint count, it will get
         ** recomputed below
         */
-        LC_OperData.HkPacket.ActiveAPs = 0;
+        LC_OperData.HkPacket.Payload.ActiveAPs = 0;
 
         /*
         ** Update packed watch results
@@ -344,7 +344,7 @@ int32 LC_HousekeepingReq(const CFE_MSG_CommandHeader_t *MsgPtr)
             /*
             ** Update houskeeping watch results array
             */
-            LC_OperData.HkPacket.WPResults[HKIndex] = ByteData;
+            LC_OperData.HkPacket.Payload.WPResults[HKIndex] = ByteData;
 
         } /* end watch results for loop */
 
@@ -361,13 +361,13 @@ int32 LC_HousekeepingReq(const CFE_MSG_CommandHeader_t *MsgPtr)
             */
             switch (LC_OperData.ARTPtr[TableIndex + 1].CurrentState)
             {
-                case LC_ACTION_NOT_USED:
+                case LC_APSTATE_ACTION_NOT_USED:
                     ByteData = LC_HKAR_STATE_NOT_USED << 6;
                     break;
 
                 case LC_APSTATE_ACTIVE:
                     ByteData = LC_HKAR_STATE_ACTIVE << 6;
-                    LC_OperData.HkPacket.ActiveAPs++;
+                    LC_OperData.HkPacket.Payload.ActiveAPs++;
                     break;
 
                 case LC_APSTATE_PASSIVE:
@@ -421,13 +421,13 @@ int32 LC_HousekeepingReq(const CFE_MSG_CommandHeader_t *MsgPtr)
             */
             switch (LC_OperData.ARTPtr[TableIndex].CurrentState)
             {
-                case LC_ACTION_NOT_USED:
+                case LC_APSTATE_ACTION_NOT_USED:
                     ByteData = (ByteData | (LC_HKAR_STATE_NOT_USED << 2));
                     break;
 
                 case LC_APSTATE_ACTIVE:
                     ByteData = (ByteData | (LC_HKAR_STATE_ACTIVE << 2));
-                    LC_OperData.HkPacket.ActiveAPs++;
+                    LC_OperData.HkPacket.Payload.ActiveAPs++;
                     break;
 
                 case LC_APSTATE_PASSIVE:
@@ -470,15 +470,15 @@ int32 LC_HousekeepingReq(const CFE_MSG_CommandHeader_t *MsgPtr)
             /*
             ** Update houskeeping action results array
             */
-            LC_OperData.HkPacket.APResults[HKIndex] = ByteData;
+            LC_OperData.HkPacket.Payload.APResults[HKIndex] = ByteData;
 
         } /* end action results for loop */
 
         /*
         ** Timestamp and send housekeeping packet
         */
-        CFE_SB_TimeStampMsg(&LC_OperData.HkPacket.TlmHeader.Msg);
-        CFE_SB_TransmitMsg(&LC_OperData.HkPacket.TlmHeader.Msg, true);
+        CFE_SB_TimeStampMsg(CFE_MSG_PTR(&LC_OperData.HkPacket.Payload));
+        CFE_SB_TransmitMsg(CFE_MSG_PTR(&LC_OperData.HkPacket.Payload), true);
 
     } /* end LC_VerifyMsgLength if */
 
@@ -648,7 +648,7 @@ void LC_SetAPStateCmd(const CFE_SB_Buffer_t *BufPtr)
                 {
                     CurrentAPState = LC_OperData.ARTPtr[TableIndex].CurrentState;
 
-                    if ((CurrentAPState != LC_ACTION_NOT_USED) && (CurrentAPState != LC_APSTATE_PERMOFF))
+                    if ((CurrentAPState != LC_APSTATE_ACTION_NOT_USED) && (CurrentAPState != LC_APSTATE_PERMOFF))
                     {
                         LC_OperData.ARTPtr[TableIndex].CurrentState = CmdPtr->NewAPState;
                     }
@@ -666,7 +666,7 @@ void LC_SetAPStateCmd(const CFE_SB_Buffer_t *BufPtr)
                     TableIndex     = CmdPtr->APNumber;
                     CurrentAPState = LC_OperData.ARTPtr[TableIndex].CurrentState;
 
-                    if ((CurrentAPState != LC_ACTION_NOT_USED) && (CurrentAPState != LC_APSTATE_PERMOFF))
+                    if ((CurrentAPState != LC_APSTATE_ACTION_NOT_USED) && (CurrentAPState != LC_APSTATE_PERMOFF))
                     {
                         /*
                         ** Update state for single actionpoint specified
@@ -874,7 +874,7 @@ void LC_ResetResultsAP(uint32 StartIndex, uint32 EndIndex, bool ResetStatsCmd)
 void LC_ResetWPStatsCmd(const CFE_SB_Buffer_t *BufPtr)
 {
     size_t             ExpectedLength = sizeof(LC_ResetWPStats_t);
-    LC_ResetWPStats_t *CmdPtr         = (LC_ResetWPStats_t *)BufPtr;
+    LC_ResetWPStats_Payload_t *CmdPtr         = &((LC_ResetWPStats_t *)BufPtr)->Payload;
     bool               CmdSuccess     = false;
 
     /* verify message packet length */

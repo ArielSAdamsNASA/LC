@@ -37,6 +37,9 @@
 /************************************************************************
  * Macro Definitions
  ************************************************************************/
+#ifdef CFE_EDS_ENABLED_BUILD
+#include "lc_eds_cc.h"
+#else
 
 /**
  * \name LC Application States
@@ -52,7 +55,7 @@
  * \name Actionpoint States
  * \{
  */
-#define LC_ACTION_NOT_USED  0xFF /**< \brief Actionpoint unused, not valid command argument */
+#define LC_APSTATE_ACTION_NOT_USED  0xFF /**< \brief Actionpoint unused, not valid command argument */
 #define LC_APSTATE_ACTIVE   1    /**< \brief Actionpoint state active */
 #define LC_APSTATE_PASSIVE  2    /**< \brief Actionpoint state passive */
 #define LC_APSTATE_DISABLED 3    /**< \brief Actionpoint state disabled */
@@ -234,7 +237,7 @@
  *       - Invalid actionpoint state specified in command message
  *       - Actionpoint number specified in command message is
  *         out of range
- *       - Actionpoint current state is either #LC_ACTION_NOT_USED
+ *       - Actionpoint current state is either #LC_APSTATE_ACTION_NOT_USED
  *         or #LC_APSTATE_PERMOFF
  *
  *  \par Evidence of failure may be found in the following telemetry:
@@ -354,5 +357,7 @@
 #define LC_RESET_WP_STATS_CC 6
 
 /**\}*/
+
+#endif
 
 #endif
