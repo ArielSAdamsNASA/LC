@@ -71,7 +71,7 @@ void LC_SampleAPs_Test_SingleActionPointError(void)
     snprintf(ExpectedEventString, CFE_MISSION_EVS_MAX_MESSAGE_LENGTH,
              "Sample AP error, invalid current AP state: AP = %%d, State = %%d");
 
-    LC_OperData.ARTPtr[StartIndex].CurrentState = LC_ACTION_NOT_USED;
+    LC_OperData.ARTPtr[StartIndex].CurrentState = LC_APSTATE_ACTION_NOT_USED;
 
     /* Execute the function being tested */
     LC_SampleAPs(StartIndex, EndIndex);
@@ -1252,7 +1252,7 @@ void LC_ValidateADT_Test_ActionNotUsed(void)
 
     for (TableIndex = 0; TableIndex < LC_MAX_ACTIONPOINTS; TableIndex++)
     {
-        LC_OperData.ADTPtr[TableIndex].DefaultState = LC_ACTION_NOT_USED;
+        LC_OperData.ADTPtr[TableIndex].DefaultState = LC_APSTATE_ACTION_NOT_USED;
     }
 
     /* Execute the function being tested */
@@ -1529,7 +1529,7 @@ void LC_ValidateADT_Test_Nominal(void)
 
     for (TableIndex = 0; TableIndex < LC_MAX_ACTIONPOINTS; TableIndex++)
     {
-        LC_OperData.ADTPtr[TableIndex].DefaultState      = LC_ACTION_NOT_USED;
+        LC_OperData.ADTPtr[TableIndex].DefaultState      = LC_APSTATE_ACTION_NOT_USED;
         LC_OperData.ADTPtr[TableIndex].RTSId             = 1;
         LC_OperData.ADTPtr[TableIndex].MaxFailsBeforeRTS = 1;
         LC_OperData.ADTPtr[TableIndex].EventType         = CFE_EVS_EventType_DEBUG;

@@ -58,7 +58,7 @@ void LC_CreateHashTable_Test(void)
     /* Default entries to unused */
     for (i = 0; i < LC_MAX_WATCHPOINTS; i++)
     {
-        LC_OperData.WDTPtr[i].DataType = LC_WATCH_NOT_USED;
+        LC_OperData.WDTPtr[i].DataType = LC_DATA_WATCH_NOT_USED;
     }
 
     /* Match MsgID but null watch point list */
@@ -1832,7 +1832,7 @@ void LC_ValidateWDT_Test_UnusedTableEntry(void)
 
     for (TableIndex = 0; TableIndex < LC_MAX_WATCHPOINTS; TableIndex++)
     {
-        LC_OperData.WDTPtr[TableIndex].DataType = LC_WATCH_NOT_USED;
+        LC_OperData.WDTPtr[TableIndex].DataType = LC_DATA_WATCH_NOT_USED;
     }
 
     /* Execute the function being tested */
@@ -1867,7 +1867,7 @@ void LC_ValidateWDT_Test_AllDataTypes(void)
 
     for (TableIndex = 0; TableIndex < LC_MAX_WATCHPOINTS; TableIndex++)
     {
-        LC_OperData.WDTPtr[TableIndex].DataType = LC_WATCH_NOT_USED;
+        LC_OperData.WDTPtr[TableIndex].DataType = LC_DATA_WATCH_NOT_USED;
     }
 
     /* Add an entry for each data type */

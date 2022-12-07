@@ -39,7 +39,9 @@
 /*************************************************************************
  * Type Definitions
  *************************************************************************/
-
+#ifdef CFE_EDS_ENABLED_BUILD
+#include "lc_eds_typedefs.h"
+#else
 /**
  * \brief Alignment union
  *
@@ -183,5 +185,7 @@ typedef struct
                                                 has been sent for this actionpoint     */
     uint32 CumulativeEventMsgsSent; /**< \brief Total number of event messages sent    */
 } LC_ARTEntry_t;
+
+#endif
 
 #endif

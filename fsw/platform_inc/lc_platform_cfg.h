@@ -62,6 +62,8 @@
  */
 #define LC_PIPE_DEPTH 12
 
+#ifndef CFE_EDS_ENABLED_BUILD
+
 /**
  * \brief Maximum number of watchpoints
  *
@@ -111,6 +113,8 @@
  */
 #define LC_MAX_ACTIONPOINTS 176
 
+#endif
+
 /**
  * \brief LC state after power-on reset
  *
@@ -124,6 +128,7 @@
  *       #LC_STATE_PASSIVE
  *       #LC_STATE_DISABLED
  */
+
 #define LC_STATE_POWER_ON_RESET LC_STATE_DISABLED
 
 /**
